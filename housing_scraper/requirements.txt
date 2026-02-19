@@ -1,0 +1,6 @@
+# This file contains the Python packages required by the project.
+# Install them using: pip install -r requirements.txt
+
+playwright
+schedule
+requests

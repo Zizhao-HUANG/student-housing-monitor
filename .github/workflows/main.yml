@@ -1,0 +1,43 @@
+name: Daily Housing Check
+
+# on:
+#  schedule:
+    # Runs at 07:00, 10:00, 12:00, and 15:00 UTC.
+    # This corresponds to 09:00, 12:00, 14:00, and 17:00 in France (CEST, UTC+2).
+#    - cron: '0 7 * * *'
+#    - cron: '0 10 * * *'
+#    - cron: '0 12 * * *'
+#    - cron: '0 15 * * *'
+  workflow_dispatch:
+    # Allows for manual triggering of the workflow from the GitHub Actions UI.
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r housing_scraper/requirements.txt
+
+    - name: Install Playwright browsers and dependencies
+      run: |
+        playwright install --with-deps chromium
+
+    - name: Verify config file exists
+      run: |
+        echo "Checking for config.ini..."
+        ls -l housing_scraper/config.ini
+        cat housing_scraper/config.ini
+
+    - name: Run the scraper script
+      run: python housing_scraper/main.py

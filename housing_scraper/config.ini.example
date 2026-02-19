@@ -1,0 +1,33 @@
+[GENERAL]
+# Time to run the daily check (24-hour format)
+SCHEDULE_TIME = 14:15
+
+[URLS]
+# URLs to monitor — add or remove entries as needed
+CROUS = https://trouverunlogement.lescrous.fr/tools/41/search
+ESTUDINES = https://www.estudines.com/uk/student-housing-strasbourg/strasbourg-presqu-ile-malraux-residence
+NEXITY = https://www.nexity-studea.com/locations-etudiantes/strasbourg/studea-winston-2-po0000150
+NEMEA = https://www.nemea-residence-etudiante.com/fr/strasbourg-elypseo
+LOKAVIZ_EM_STRASBOURG = https://www.lokaviz.fr/rechercher-un-logement/fiche-logement/affichage:liste
+ADELE_WINSTON_2 = https://www.adele.org/residence/150/studea-winston-2/strasbourg-67
+
+[EMAIL]
+# Enable email notifications (true / false)
+ENABLED = false
+# SMTP server (e.g. smtp.gmail.com)
+SMTP_SERVER = smtp.gmail.com
+SMTP_PORT = 587
+# Your sender email address
+SMTP_USER = your-email@gmail.com
+# App-specific password (not your account password)
+SMTP_PASSWORD = xxxx xxxx xxxx xxxx
+# Recipient email
+RECIPIENT_EMAIL = recipient@example.com
+
+[TELEGRAM]
+# Enable Telegram notifications (true / false)
+ENABLED = false
+# Bot token from @BotFather
+BOT_TOKEN = YOUR_BOT_TOKEN_HERE
+# Chat ID from @userinfobot
+CHAT_ID = YOUR_CHAT_ID_HERE
