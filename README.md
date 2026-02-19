@@ -25,7 +25,7 @@ All scrapers use [Playwright](https://playwright.dev/) for headless browser auto
 ┌──────────────────────────────────────┐
 │         main.py (Orchestrator)       │
 │  ┌──────────┐ ┌───────────────────┐  │
-│  │ Scheduler │ │ Async Scrape Loop │  │
+│  │ Scheduler│ │ Async Scrape Loop │  │
 │  └──────────┘ └───────────────────┘  │
 └──────────────┬───────────────────────┘
                │
